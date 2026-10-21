@@ -7,96 +7,84 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; connect-src 'self'; img-src 'self' data: blob:; base-uri 'none'; form-action 'none'">
 <title>心理学統計法 2026</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2317313D'/%3E%3Ccircle cx='9' cy='22' r='3' fill='%236CC0C4'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%236CC0C4'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%236CC0C4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ccircle cx='9' cy='22' r='3' fill='%23fff'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%23fff'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%23fff'/%3E%3C/svg%3E">
 <style>
-@font-face{font-family:"Bricolage";src:url("assets/bricolage.woff2") format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+/* ---------- 色（濃紺と黄） ---------- */
+:root{--bg:#13233B;--panel:#1A2D48;--ink:#EEF2F7;--sub:#A2B4CB;--faint:#5B7090;--rule:#263B59;--accent:#F3C443;--accent-ink:#13233B;--ring:rgba(243,196,67,.28);--chip:#1A2D48;--chip-line:#34496B;--warn:#FFB4A2;color-scheme:dark}
 :root{
-  --bg:#F3F6F6;--panel:#FFFFFF;--ink:#17313D;--sub:#5E727A;--faint:#9FB0B6;--rule:#CBD6DA;--teal:#1F7A80;--teal-ink:#FFFFFF;--wash:#E2EEEE;--warn:#8A5A12;
   --jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Yu Gothic","Meiryo",system-ui,sans-serif;
-  --num:"Bricolage","Avenir Next","Segoe UI",var(--jp);
-  color-scheme:light dark;
+  --num:"Helvetica Neue",Helvetica,Arial,var(--jp);
 }
-@media (prefers-color-scheme:dark){:root{--bg:#0E1A20;--panel:#13232B;--ink:#DCE7EA;--sub:#93A7AE;--faint:#4F6670;--rule:#29404A;--teal:#6CC0C4;--teal-ink:#0E1A20;--wash:#16303A;--warn:#E3B46B}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp);font-size:16px;line-height:1.75;font-feature-settings:"palt" 0}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp);font-size:15px;line-height:1.6}
 a{color:inherit}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
 @media (min-width:720px){.wrap{padding:0 40px}}
 
 /* ---------- 見出し ---------- */
-header.top{padding:48px 0 28px}
-@media (min-width:720px){header.top{padding:72px 0 36px}}
-.en{font-family:var(--num);font-weight:500;font-stretch:88%;letter-spacing:.01em;color:var(--sub);font-size:15px;margin:0 0 6px}
-h1{margin:0;font-size:clamp(34px,7vw,56px);line-height:1.15;font-weight:700;letter-spacing:.04em}
-.meta{margin:14px 0 0;color:var(--sub);font-size:14px;line-height:1.7}
-.meta{display:flex;flex-wrap:wrap;column-gap:1.1em;row-gap:0}
+header.top{padding:36px 0 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px}
+@media (min-width:720px){header.top{padding:56px 0 22px}}
+h1{margin:0;font-size:clamp(26px,5vw,34px);line-height:1.2;font-weight:700;letter-spacing:.05em}
+.en{font-family:var(--num);font-weight:400;color:var(--sub);font-size:14px;margin:0}
+.meta{flex-basis:100%;margin:6px 0 0;color:var(--sub);font-size:13px;display:flex;flex-wrap:wrap;column-gap:1em}
 .meta span{white-space:nowrap}
 
 /* ---------- 鍵 ---------- */
-.lock{border-top:2px solid var(--ink);padding:36px 0 64px;max-width:520px}
-.lock h2{font-size:20px;margin:0 0 6px}
-.lock p{margin:0 0 20px;color:var(--sub);font-size:14px}
-.field{display:flex;gap:8px;flex-wrap:wrap}
-.field input[type=password]{flex:1 1 220px;min-width:0;font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:4px}
-.field input[type=password]:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px color-mix(in srgb,var(--teal) 25%,transparent)}
-.btn{font:inherit;font-size:15px;font-weight:700;padding:12px 22px;border:0;border-radius:4px;background:var(--ink);color:var(--bg);cursor:pointer}
-.btn:focus-visible,.file:focus-visible,.link:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-.remember{display:flex;gap:8px;align-items:center;margin-top:14px;font-size:14px;color:var(--sub)}
-.err{color:var(--warn);font-size:14px;margin-top:12px;min-height:1.5em}
+.lock{border-top:1px solid var(--ink);padding:28px 0 56px;max-width:480px}
+.lock p{margin:0 0 14px;color:var(--sub);font-size:14px}
+.field{display:flex;gap:8px}
+.field input[type=password]{flex:1;min-width:0;font:inherit;font-size:17px;padding:11px 13px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:6px}
+.field input[type=password]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--ring)}
+.btn{font:inherit;font-size:15px;font-weight:700;padding:11px 20px;border:0;border-radius:6px;background:var(--ink);color:var(--bg);cursor:pointer}
+.remember{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:13px;color:var(--sub)}
+.err{color:var(--warn);font-size:13px;margin-top:10px;min-height:1.4em}
+.btn:focus-visible,.chip:focus-visible,.link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* ---------- 一覧 ---------- */
-.bar{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:2px solid var(--ink);padding:10px 0 0;font-size:13px;color:var(--sub)}
+/* ---------- 一覧：各回 2 行 ---------- */
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:7px 0;font-size:12px;color:var(--sub)}
 .link{background:none;border:0;padding:0;font:inherit;color:var(--sub);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 ol.lectures{list-style:none;margin:0;padding:0}
-.lec{display:grid;grid-template-columns:76px 1fr;gap:0 16px;padding:22px 0 24px;border-bottom:1px solid var(--rule)}
-@media (min-width:720px){.lec{grid-template-columns:150px 1fr;gap:0 28px;padding:28px 0 30px}}
-.no{font-family:var(--num);font-variant-numeric:tabular-nums;line-height:.82;font-size:58px;letter-spacing:-.02em;padding-top:4px;user-select:none}
-@media (min-width:720px){.no{font-size:104px}}
-/* 番号の太さと幅で、回の位置（済んだ回・次の回・これからの回）を表す */
-.is-done .no{font-weight:300;font-stretch:75%;color:var(--ink)}
-.is-next .no{font-weight:800;font-stretch:100%;color:var(--teal)}
-.is-future .no{font-weight:500;font-stretch:88%;color:transparent;-webkit-text-stroke:1px var(--faint)}
-.when{font-size:13px;color:var(--sub);margin:0;line-height:1.5}
-.when b{font-weight:700;color:var(--teal)}
-.lec h2{margin:2px 0 0;font-size:20px;line-height:1.45;font-weight:700;letter-spacing:.02em}
-@media (min-width:720px){.lec h2{font-size:23px}}
-.desc{margin:2px 0 0;color:var(--sub);font-size:14px}
-.is-future h2{font-size:17px;color:var(--sub);font-weight:500}
-.is-future .desc{display:none}
-.is-future{padding:14px 0}
-.is-future .no{font-size:40px}
-@media (min-width:720px){.is-future .no{font-size:56px}}
-.files{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.file{text-decoration:none;display:inline-flex;align-items:baseline;gap:10px;font:inherit;font-size:14px;font-weight:700;padding:9px 14px;border:1.5px solid var(--ink);border-radius:4px;background:var(--panel);color:var(--ink);cursor:pointer;text-align:left}
-.file small{font-family:var(--num);font-weight:400;font-size:13px;color:var(--sub)}
-.file:hover{background:var(--wash)}
-.file.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.file.primary small{color:color-mix(in srgb,var(--bg) 75%,var(--ink))}
-.file[disabled]{cursor:default;border-style:dashed;border-color:var(--faint);color:var(--sub);background:transparent;font-weight:500}
-.file.busy{opacity:.6}
-.is-next{background:linear-gradient(var(--wash),var(--wash)) left/4px 100% no-repeat}
-@media (max-width:719px){.is-next{background:none}}
+.lec{display:grid;grid-template-columns:44px 1fr;column-gap:12px;padding:10px 0 11px;border-bottom:1px solid var(--rule)}
+@media (min-width:720px){.lec{grid-template-columns:64px 1fr;column-gap:16px;padding:12px 0 13px}}
+.no{grid-row:1 / span 2;font-family:var(--num);font-variant-numeric:tabular-nums;font-size:30px;line-height:1;letter-spacing:0;padding-top:2px;user-select:none}
+@media (min-width:720px){.no{font-size:40px}}
+/* 番号の色と太さで、済んだ回・次の回・これからの回を表す */
+.is-done .no{font-weight:300}
+.is-next .no{font-weight:700;color:var(--accent)}
+.is-future .no{font-weight:300;color:var(--faint)}
+.l1{display:flex;align-items:baseline;gap:10px;min-width:0}
+.date{font-family:var(--num);font-variant-numeric:tabular-nums;font-size:13px;color:var(--sub);white-space:nowrap}
+.title{font-weight:700;font-size:16px;letter-spacing:.02em;min-width:0}
+@media (min-width:720px){.title{font-size:17px}}
+.tag{font-size:11px;font-weight:700;color:var(--accent-ink);background:var(--accent);padding:1px 7px;border-radius:99px;white-space:nowrap}
+.is-future .title{font-weight:500;color:var(--sub)}
+.l2{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.desc{font-size:13px;color:var(--faint)}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font:inherit;font-size:13px;font-weight:600;line-height:1.5;padding:2px 10px;border:1px solid var(--chip-line);border-radius:99px;background:var(--chip);color:var(--ink);cursor:pointer;text-decoration:none;white-space:nowrap}
+.chip:hover{border-color:var(--ink)}
+.chip.pdf{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip small{font-family:var(--num);font-weight:400;font-size:12px;opacity:.7}
+.chip[disabled]{cursor:default;background:transparent;border-style:dashed;color:var(--sub);font-weight:500}
+.chip.busy{opacity:.55}
+.s{display:none}
+@media (max-width:719px){.f{display:none}.s{display:inline}.chip small{display:none}.chip{font-size:12px;padding:1px 6px}.l2{gap:4px}.wrap{padding:0 14px}.lec{grid-template-columns:38px 1fr;column-gap:8px}.no{font-size:27px}}
 
-footer{padding:36px 0 60px;color:var(--sub);font-size:13px;line-height:1.8}
-footer p{margin:0 0 8px;max-width:62ch}
+footer{padding:28px 0 48px;color:var(--sub);font-size:12px;line-height:1.8}
+footer p{margin:0 0 6px;max-width:64ch}
 [hidden]{display:none!important}
-@media (prefers-reduced-motion:no-preference){.lec{animation:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
-  <div>
-    <p class="en">Psychological Statistics 2026</p>
-    <h1>心理学統計法</h1>
-    <p class="meta" id="meta" hidden></p>
-  </div>
+  <h1>心理学統計法</h1>
+  <p class="en">Psychological Statistics 2026</p>
+  <p class="meta" id="meta" hidden></p>
 </header>
 
 <main>
 <section class="lock" id="lock">
-  <h2>資料を開く</h2>
   <p>パスワードを入れてください</p>
   <form id="f" autocomplete="off">
     <div class="field">
@@ -127,6 +115,7 @@ const $ = (s) => document.querySelector(s);
 const b64 = (u8) => btoa(String.fromCharCode(...u8));
 const unb64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
 const hex = (s) => new Uint8Array(s.match(/../g).map((h) => parseInt(h, 16)));
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 let KEY = null, MAN = null;
 
 async function derive(pw) {
@@ -135,19 +124,14 @@ async function derive(pw) {
   return new Uint8Array(bits);
 }
 async function keyFrom(raw) { return crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]); }
-async function dec(key, buf) {
-  const u = new Uint8Array(buf);
-  return crypto.subtle.decrypt({ name: "AES-GCM", iv: u.slice(0, 12) }, key, u.slice(12));
-}
+async function dec(key, buf) { const u = new Uint8Array(buf); return crypto.subtle.decrypt({ name: "AES-GCM", iv: u.slice(0, 12) }, key, u.slice(12)); }
 async function getBin(path) {
   const r = await fetch(path, { cache: "no-cache" });
   if (!r.ok) { const e = new Error("http " + r.status); e.status = r.status; throw e; }
   return r.arrayBuffer();
 }
 function saved() { try { return localStorage.getItem(STORE) || sessionStorage.getItem(STORE); } catch (e) { return null; } }
-function save(raw, remember) {
-  try { (remember ? localStorage : sessionStorage).setItem(STORE, b64(raw)); } catch (e) {}
-}
+function save(raw, remember) { try { (remember ? localStorage : sessionStorage).setItem(STORE, b64(raw)); } catch (e) {} }
 function forget() { try { localStorage.removeItem(STORE); sessionStorage.removeItem(STORE); } catch (e) {} }
 
 async function open(raw) {
@@ -158,10 +142,14 @@ async function open(raw) {
 }
 
 const WD = ["日", "月", "火", "水", "木", "金", "土"];
-function fmtDate(iso) { const [y, m, d] = iso.split("-").map(Number); const w = new Date(Date.UTC(y, m - 1, d)).getUTCDay(); return `${m}/${d}（${WD[w]}）`; }
+function fmtDate(iso) { const [y, m, d] = iso.split("-").map(Number); return `${m}/${d} ${WD[new Date(Date.UTC(y, m - 1, d)).getUTCDay()]}`; }
 function fmtSize(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1e3)) + " KB"; }
 function todayJST() { return new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10); }
-function fmtRelease(iso) { const d = new Date(iso); const j = new Date(d.getTime() + 9 * 3600e3); return `${j.getUTCMonth() + 1}/${j.getUTCDate()} ${String(j.getUTCHours()).padStart(2, "0")}:${String(j.getUTCMinutes()).padStart(2, "0")}`; }
+function jst(iso) { const j = new Date(Date.parse(iso) + 9 * 3600e3); return { md: `${j.getUTCMonth() + 1}/${j.getUTCDate()}`, hm: `${String(j.getUTCHours()).padStart(2, "0")}:${String(j.getUTCMinutes()).padStart(2, "0")}` }; }
+
+/* ラベル：PC では長い名前、スマホでは短い名前 */
+const SHORT = { slides: "スライド", practice: "練習用", answer: "解答例", form: "コメント" };
+function label(node, full, short) { node.append(el("span", "f", full), el("span", "s", short)); }
 
 function render() {
   const t = todayJST();
@@ -169,55 +157,47 @@ function render() {
   const ol = $("#lectures"); ol.textContent = "";
   for (const l of MAN.lectures) {
     const state = l === next ? "is-next" : l.date < t ? "is-done" : "is-future";
-    const li = document.createElement("li"); li.className = "lec " + state;
-    const no = document.createElement("div"); no.className = "no"; no.setAttribute("aria-hidden", "true"); no.textContent = String(l.no).padStart(2, "0");
-    const body = document.createElement("div");
-    const when = document.createElement("p"); when.className = "when";
-    when.textContent = `第 ${l.no} 回　${fmtDate(l.date)}`;
-    if (state === "is-next") { const b = document.createElement("b"); b.textContent = l.date === t ? "　今日" : "　次の授業"; when.append(b); }
-    const h = document.createElement("h2"); h.textContent = l.title;
-    const d = document.createElement("p"); d.className = "desc"; d.textContent = l.desc;
-    body.append(when, h, d);
-    if (state !== "is-future" || l.files.length) {
-      const fs = document.createElement("div"); fs.className = "files";
-      for (const f of l.files) fs.append(fileButton(f));
-      if (fs.childElementCount) body.append(fs);
-    }
-    li.append(no, body); ol.append(li);
+    const li = el("li", "lec " + state);
+    const no = el("div", "no", String(l.no).padStart(2, "0")); no.setAttribute("aria-hidden", "true");
+    const l1 = el("div", "l1");
+    l1.append(el("span", "date", fmtDate(l.date)), el("span", "title", l.title));
+    if (state === "is-next") l1.append(el("span", "tag", l.date === t ? "今日" : "次回"));
+    const l2 = el("div", "l2");
+    if (l.files.length) for (const f of l.files) l2.append(chip(f)); else l2.append(el("span", "desc", l.desc));
+    li.setAttribute("aria-label", `第 ${l.no} 回 ${fmtDate(l.date)} ${l.title}`);
+    li.append(no, l1, l2); ol.append(li);
   }
   const meta = $("#meta"); meta.textContent = "";
-  for (const t of (MAN.course || [])) { const s = document.createElement("span"); s.textContent = t; meta.append(s); }
+  for (const s of (MAN.course || [])) meta.append(el("span", "", s));
   meta.hidden = !meta.childElementCount;
   $("#upd").textContent = "最終更新 " + MAN.updated;
   $("#lock").hidden = true; $("#list").hidden = false;
 }
 
-function fileButton(f) {
+function chip(f) {
   if (f.kind === "form") {
-    const x = document.createElement("a"); x.className = "file"; x.href = f.url; x.target = "_blank"; x.rel = "noopener noreferrer";
-    const t = document.createElement("span"); t.textContent = f.label; const s = document.createElement("small"); s.textContent = "Google フォーム"; x.append(t, s); return x;
+    const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, SHORT.form); return a;
   }
-  const b = document.createElement("button"); b.type = "button"; b.className = "file" + (f.kind === "slides" ? " primary" : "");
-  const label = document.createElement("span"); label.textContent = f.label;
-  b.append(label);
-  if (f.pending) { b.disabled = true; label.textContent = f.label + "（準備中）"; return b; }
-  if (f.release && Date.now() < Date.parse(f.release)) { b.disabled = true; label.textContent = `${f.label}（${fmtRelease(f.release)} に公開）`; return b; }
-  const s = document.createElement("small"); s.textContent = fmtSize(f.size); b.append(s);
-  b.addEventListener("click", () => download(f, b, label));
+  const b = el("button", "chip" + (f.kind === "slides" ? " pdf" : "")); b.type = "button";
+  const box = el("span"); b.append(box);
+  if (f.pending) { b.disabled = true; label(box, f.label + " 準備中", SHORT[f.kind] + " 準備中"); return b; }
+  if (f.release && Date.now() < Date.parse(f.release)) { const r = jst(f.release); b.disabled = true; label(box, `${f.label} ${r.md} ${r.hm} 公開`, `${SHORT[f.kind]} ${r.hm}`); return b; }
+  label(box, f.label, SHORT[f.kind]); b.append(el("small", "", fmtSize(f.size)));
+  b.addEventListener("click", () => download(f, b, box));
   return b;
 }
 
-async function download(f, b, label) {
+async function download(f, b, box) {
   if (b.classList.contains("busy")) return;
-  const orig = label.textContent; b.classList.add("busy"); label.textContent = "準備しています…";
+  const keep = [...box.childNodes]; b.classList.add("busy"); box.textContent = "準備中…";
   try {
     const plain = await dec(KEY, await getBin(`data/${f.id}.bin?v=${f.v}`));
     const url = URL.createObjectURL(new Blob([plain], { type: f.mime }));
     const a = document.createElement("a"); a.href = url; a.download = f.name; document.body.append(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 60000);
-    label.textContent = orig;
+    box.textContent = ""; box.append(...keep);
   } catch (e) {
-    label.textContent = e.status === 404 && f.release ? "まもなく公開されます。少しあとで開き直してください" : "ダウンロードできませんでした。ページを開き直してください";
+    box.textContent = e.status === 404 && f.release ? "まもなく公開。少しあとで開き直してください" : "取得できませんでした。開き直してください";
   } finally { b.classList.remove("busy"); }
 }
 
