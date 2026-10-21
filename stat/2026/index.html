@@ -88,16 +88,16 @@ footer p{margin:0 0 6px;max-width:64ch}
   <p>パスワードを入れてください</p>
   <form id="f" autocomplete="off">
     <div class="field">
-      <input type="password" id="pw" aria-label="パスワード" placeholder="パスワード" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+      <input type="password" id="pw" aria-label="パスワード" placeholder="パスワード" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
       <button class="btn" type="submit" id="go">開く</button>
     </div>
-    <label class="remember"><input type="checkbox" id="rem"> この端末で覚えておく（大学の共用 PC では付けない）</label>
+    <label class="remember"><input type="checkbox" id="rem"> この端末で覚えておく（次からこの画面を飛ばして開く。大学の共用 PC では付けない）</label>
     <div class="err" id="err" role="alert"></div>
   </form>
 </section>
 
 <section id="list" hidden>
-  <div class="bar"><span id="upd"></span><button class="link" id="out" type="button">ロックする</button></div>
+  <div class="bar"><span id="upd"></span><button class="link" id="out" type="button">ロックして記憶を消す</button></div>
   <ol class="lectures" id="lectures"></ol>
 </section>
 </main>
@@ -203,7 +203,8 @@ async function download(f, b, box) {
 
 $("#f").addEventListener("submit", async (ev) => {
   ev.preventDefault();
-  const pw = $("#pw").value; if (!pw) return;
+  const pw = $("#pw").value;
+  if (!pw.trim()) { $("#err").textContent = "この端末にはパスワードが記憶されていません。パスワードを入れてください。"; $("#pw").focus(); return; }
   $("#go").disabled = true; $("#err").textContent = "確かめています…";
   try {
     const raw = await derive(pw);
