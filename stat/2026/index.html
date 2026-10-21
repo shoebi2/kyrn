@@ -90,14 +90,14 @@ footer p{margin:0 0 8px;max-width:62ch}
   <div>
     <p class="en">Psychological Statistics 2026</p>
     <h1>心理学統計法</h1>
-    <p class="meta"><span>2026 年度 後期</span><span>金曜 5 限</span><span>F303</span><span>弘光 健太郎・斎藤 聖子</span></p>
+    <p class="meta" id="meta" hidden></p>
   </div>
 </header>
 
 <main>
 <section class="lock" id="lock">
   <h2>資料を開く</h2>
-  <p>授業で伝えたパスワードを入れてください。資料はこの端末の中で復号されます。</p>
+  <p>パスワードを入れてください</p>
   <form id="f" autocomplete="off">
     <div class="field">
       <input type="password" id="pw" aria-label="パスワード" placeholder="パスワード" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required>
@@ -116,7 +116,6 @@ footer p{margin:0 0 8px;max-width:62ch}
 
 <footer>
   <p>資料は受講者の学習のためのものです。ほかの人に渡したり、SNS やほかのサイトに載せたりしないでください。パスワードも人に教えないでください。</p>
-  <p>教科書：山田 剛史・村井 潤一郎（2004）『よくわかる心理統計』ミネルヴァ書房</p>
   <p>スライドの PDF は授業の前に更新することがあります。最新のものをダウンロードしてください。</p>
 </footer>
 </div>
@@ -186,6 +185,9 @@ function render() {
     }
     li.append(no, body); ol.append(li);
   }
+  const meta = $("#meta"); meta.textContent = "";
+  for (const t of (MAN.course || [])) { const s = document.createElement("span"); s.textContent = t; meta.append(s); }
+  meta.hidden = !meta.childElementCount;
   $("#upd").textContent = "最終更新 " + MAN.updated;
   $("#lock").hidden = true; $("#list").hidden = false;
 }
@@ -231,7 +233,7 @@ $("#f").addEventListener("submit", async (ev) => {
     $("#err").textContent = e && e.status ? "資料を読み込めませんでした。通信を確かめて、もう一度試してください。" : "パスワードが違います。授業で伝えたパスワードを、そのまま入れてください（大文字・小文字、全角・半角は区別しません）。";
   } finally { $("#go").disabled = false; }
 });
-$("#out").addEventListener("click", () => { forget(); KEY = MAN = null; $("#list").hidden = true; $("#lock").hidden = false; $("#pw").focus(); });
+$("#out").addEventListener("click", () => { forget(); KEY = MAN = null; $("#meta").hidden = true; $("#meta").textContent = ""; $("#list").hidden = true; $("#lock").hidden = false; $("#pw").focus(); });
 
 (async () => {
   if (!window.crypto || !crypto.subtle) { $("#err").textContent = "このブラウザでは開けません。Safari・Chrome・Edge の新しい版で開いてください。"; $("#go").disabled = true; return; }
