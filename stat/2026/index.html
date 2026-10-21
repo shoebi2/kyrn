@@ -9,7 +9,8 @@
 <title>心理学統計法 2026</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ccircle cx='9' cy='22' r='3' fill='%23fff'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%23fff'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%23fff'/%3E%3C/svg%3E">
 <style>
-/* ---------- 色（濃紺と黄） ---------- */
+/* ---------- 色（site_config.json の site.theme で差し替える。既定は濃紺と黄） ---------- */
+:root{--bg:#13233B;--panel:#1A2D48;--ink:#EEF2F7;--sub:#A2B4CB;--faint:#5B7090;--rule:#263B59;--accent:#F3C443;--accent-ink:#13233B;--ring:rgba(243,196,67,.28);--chip:#1A2D48;--chip-line:#34496B;--warn:#FFB4A2;color-scheme:dark}
 :root{--bg:#13233B;--panel:#1A2D48;--ink:#EEF2F7;--sub:#A2B4CB;--faint:#5B7090;--rule:#263B59;--accent:#F3C443;--accent-ink:#13233B;--ring:rgba(243,196,67,.28);--chip:#1A2D48;--chip-line:#34496B;--warn:#FFB4A2;color-scheme:dark}
 :root{
   --jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Yu Gothic","Meiryo",system-ui,sans-serif;
@@ -175,8 +176,8 @@ function render() {
 }
 
 function chip(f) {
-  if (f.kind === "form") {
-    const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, SHORT.form); return a;
+  if (f.kind === "form" || f.kind === "link") {
+    const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, f.kind === "form" ? SHORT.form : (f.short || f.label)); return a;
   }
   const b = el("button", "chip" + (f.kind === "slides" ? " pdf" : "")); b.type = "button";
   const box = el("span"); b.append(box);
