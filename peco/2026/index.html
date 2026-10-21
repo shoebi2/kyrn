@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; connect-src 'self'; img-src 'self' data: blob:; base-uri 'none'; form-action 'none'">
+<title>知覚・認知心理学 2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23222'/%3E%3Ccircle cx='9' cy='22' r='3' fill='%23fff'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%23fff'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/* ---------- 色（site_config.json の site.theme で差し替える。既定は濃紺と黄） ---------- */
+:root{--bg:#13233B;--panel:#1A2D48;--ink:#EEF2F7;--sub:#A2B4CB;--faint:#5B7090;--rule:#263B59;--accent:#F3C443;--accent-ink:#13233B;--ring:rgba(243,196,67,.28);--chip:#1A2D48;--chip-line:#34496B;--warn:#FFB4A2;color-scheme:dark}
+:root{--_説明:深緑と琥珀（2026-10-21 先生の選択）。統計法の濃紺と黄とは別の色。端末の設定によらず常にこの色;--bg:#10302B;--panel:#163A34;--ink:#EEF4F1;--sub:#A3BDB5;--faint:#5E8077;--rule:#234740;--accent:#E9B44C;--accent-ink:#10302B;--ring:rgba(233,180,76,.28);--chip:#163A34;--chip-line:#2F5A51;--warn:#FFB4A2;color-scheme:dark}
+:root{
+  --jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","Yu Gothic","Meiryo",system-ui,sans-serif;
+  --num:"Helvetica Neue",Helvetica,Arial,var(--jp);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--jp);font-size:15px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+@media (min-width:720px){.wrap{padding:0 40px}}
+
+/* ---------- 見出し ---------- */
+header.top{padding:36px 0 18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px}
+@media (min-width:720px){header.top{padding:56px 0 22px}}
+h1{margin:0;font-size:clamp(26px,5vw,34px);line-height:1.2;font-weight:700;letter-spacing:.05em}
+.en{font-family:var(--num);font-weight:400;color:var(--sub);font-size:14px;margin:0}
+.meta{flex-basis:100%;margin:6px 0 0;color:var(--sub);font-size:13px;display:flex;flex-wrap:wrap;column-gap:1em}
+.meta span{white-space:nowrap}
+
+/* ---------- 鍵 ---------- */
+.lock{border-top:1px solid var(--ink);padding:28px 0 56px;max-width:480px}
+.lock p{margin:0 0 14px;color:var(--sub);font-size:14px}
+.field{display:flex;gap:8px}
+.field input[type=password]{flex:1;min-width:0;font:inherit;font-size:17px;padding:11px 13px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:6px}
+.field input[type=password]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--ring)}
+.btn{font:inherit;font-size:15px;font-weight:700;padding:11px 20px;border:0;border-radius:6px;background:var(--ink);color:var(--bg);cursor:pointer}
+.remember{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:13px;color:var(--sub)}
+.err{color:var(--warn);font-size:13px;margin-top:10px;min-height:1.4em}
+.btn:focus-visible,.chip:focus-visible,.link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- 一覧：各回 2 行 ---------- */
+.bar{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:7px 0;font-size:12px;color:var(--sub)}
+.link{background:none;border:0;padding:0;font:inherit;color:var(--sub);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+ol.lectures{list-style:none;margin:0;padding:0}
+.lec{display:grid;grid-template-columns:44px 1fr;column-gap:12px;padding:10px 0 11px;border-bottom:1px solid var(--rule)}
+@media (min-width:720px){.lec{grid-template-columns:64px 1fr;column-gap:16px;padding:12px 0 13px}}
+.no{grid-row:1 / span 2;font-family:var(--num);font-variant-numeric:tabular-nums;font-size:30px;line-height:1;letter-spacing:0;padding-top:2px;user-select:none}
+@media (min-width:720px){.no{font-size:40px}}
+/* 番号の色と太さで、済んだ回・次の回・これからの回を表す */
+.is-done .no{font-weight:300}
+.is-next .no{font-weight:700;color:var(--accent)}
+.is-future .no{font-weight:300;color:var(--faint)}
+.l1{display:flex;align-items:baseline;gap:10px;min-width:0}
+.date{font-family:var(--num);font-variant-numeric:tabular-nums;font-size:13px;color:var(--sub);white-space:nowrap}
+.title{font-weight:700;font-size:16px;letter-spacing:.02em;min-width:0}
+@media (min-width:720px){.title{font-size:17px}}
+.tag{font-size:11px;font-weight:700;color:var(--accent-ink);background:var(--accent);padding:1px 7px;border-radius:99px;white-space:nowrap}
+.is-future .title{font-weight:500;color:var(--sub)}
+.l2{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.desc{font-size:13px;color:var(--faint)}
+.chip{display:inline-flex;align-items:baseline;gap:6px;font:inherit;font-size:13px;font-weight:600;line-height:1.5;padding:2px 10px;border:1px solid var(--chip-line);border-radius:99px;background:var(--chip);color:var(--ink);cursor:pointer;text-decoration:none;white-space:nowrap}
+.chip:hover{border-color:var(--ink)}
+.chip.pdf{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip small{font-family:var(--num);font-weight:400;font-size:12px;opacity:.7}
+.chip[disabled]{cursor:default;background:transparent;border-style:dashed;color:var(--sub);font-weight:500}
+.chip.busy{opacity:.55}
+.s{display:none}
+@media (max-width:719px){.f{display:none}.s{display:inline}.chip small{display:none}.chip{font-size:12px;padding:1px 6px}.l2{gap:4px}.wrap{padding:0 14px}.lec{grid-template-columns:38px 1fr;column-gap:8px}.no{font-size:27px}}
+
+footer{padding:28px 0 48px;color:var(--sub);font-size:12px;line-height:1.8}
+footer p{margin:0 0 6px;max-width:64ch}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>知覚・認知心理学</h1>
+  <p class="en">Perception and Cognition 2026</p>
+  <p class="meta" id="meta" hidden></p>
+</header>
+
+<main>
+<section class="lock" id="lock">
+  <p>パスワードを入れてください</p>
+  <form id="f" autocomplete="off">
+    <div class="field">
+      <input type="password" id="pw" aria-label="パスワード" placeholder="パスワード" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+      <button class="btn" type="submit" id="go">開く</button>
+    </div>
+    <label class="remember"><input type="checkbox" id="rem"> この端末で覚えておく（次からこの画面を飛ばして開く。大学の共用 PC では付けない）</label>
+    <div class="err" id="err" role="alert"></div>
+  </form>
+</section>
+
+<section id="list" hidden>
+  <div class="bar"><span id="upd"></span><button class="link" id="out" type="button">ロックして記憶を消す</button></div>
+  <ol class="lectures" id="lectures"></ol>
+</section>
+</main>
+
+<footer>
+  <p>資料は受講者の学習のためのものです。ほかの人に渡したり、SNS やほかのサイトに載せたりしないでください。パスワードも人に教えないでください。</p>
+  <p>スライドの PDF は授業の前に更新することがあります。最新のものをダウンロードしてください。</p>
+</footer>
+</div>
+
+<script>
+"use strict";
+const SALT = "591aeb44cb314a795a95bb0c6c162ac5", ITER = 600000, STORE = "kyrn-peco-2026-key";
+const $ = (s) => document.querySelector(s);
+const b64 = (u8) => btoa(String.fromCharCode(...u8));
+const unb64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+const hex = (s) => new Uint8Array(s.match(/../g).map((h) => parseInt(h, 16)));
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+let KEY = null, MAN = null;
+
+async function derive(pw) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw.normalize("NFKC").trim().toLowerCase()), "PBKDF2", false, ["deriveBits"]);
+  const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: hex(SALT), iterations: ITER }, base, 256);
+  return new Uint8Array(bits);
+}
+async function keyFrom(raw) { return crypto.subtle.importKey("raw", raw, "AES-GCM", false, ["decrypt"]); }
+async function dec(key, buf) { const u = new Uint8Array(buf); return crypto.subtle.decrypt({ name: "AES-GCM", iv: u.slice(0, 12) }, key, u.slice(12)); }
+async function getBin(path) {
+  const r = await fetch(path, { cache: "no-cache" });
+  if (!r.ok) { const e = new Error("http " + r.status); e.status = r.status; throw e; }
+  return r.arrayBuffer();
+}
+function saved() { try { return localStorage.getItem(STORE) || sessionStorage.getItem(STORE); } catch (e) { return null; } }
+function save(raw, remember) { try { (remember ? localStorage : sessionStorage).setItem(STORE, b64(raw)); } catch (e) {} }
+function forget() { try { localStorage.removeItem(STORE); sessionStorage.removeItem(STORE); } catch (e) {} }
+
+async function open(raw) {
+  const key = await keyFrom(raw);
+  const plain = await dec(key, await getBin("data/m.bin"));
+  KEY = key; MAN = JSON.parse(new TextDecoder().decode(plain));
+  render();
+}
+
+const WD = ["日", "月", "火", "水", "木", "金", "土"];
+function fmtDate(iso) { const [y, m, d] = iso.split("-").map(Number); return `${m}/${d} ${WD[new Date(Date.UTC(y, m - 1, d)).getUTCDay()]}`; }
+function fmtSize(n) { return n >= 1e6 ? (n / 1e6).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1e3)) + " KB"; }
+function todayJST() { return new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10); }
+function jst(iso) { const j = new Date(Date.parse(iso) + 9 * 3600e3); return { md: `${j.getUTCMonth() + 1}/${j.getUTCDate()}`, hm: `${String(j.getUTCHours()).padStart(2, "0")}:${String(j.getUTCMinutes()).padStart(2, "0")}` }; }
+
+/* ラベル：PC では長い名前、スマホでは短い名前 */
+const SHORT = { slides: "スライド", practice: "練習用", answer: "解答例", form: "コメント" };
+function label(node, full, short) { node.append(el("span", "f", full), el("span", "s", short)); }
+
+function render() {
+  const t = todayJST();
+  const next = MAN.lectures.find((l) => l.date >= t);
+  const ol = $("#lectures"); ol.textContent = "";
+  for (const l of MAN.lectures) {
+    const state = l === next ? "is-next" : l.date < t ? "is-done" : "is-future";
+    const li = el("li", "lec " + state);
+    const no = el("div", "no", String(l.no).padStart(2, "0")); no.setAttribute("aria-hidden", "true");
+    const l1 = el("div", "l1");
+    l1.append(el("span", "date", fmtDate(l.date)), el("span", "title", l.title));
+    if (state === "is-next") l1.append(el("span", "tag", l.date === t ? "今日" : "次回"));
+    const l2 = el("div", "l2");
+    if (l.files.length) for (const f of l.files) l2.append(chip(f)); else l2.append(el("span", "desc", l.desc));
+    li.setAttribute("aria-label", `第 ${l.no} 回 ${fmtDate(l.date)} ${l.title}`);
+    li.append(no, l1, l2); ol.append(li);
+  }
+  const meta = $("#meta"); meta.textContent = "";
+  for (const s of (MAN.course || [])) meta.append(el("span", "", s));
+  meta.hidden = !meta.childElementCount;
+  $("#upd").textContent = "最終更新 " + MAN.updated;
+  $("#lock").hidden = true; $("#list").hidden = false;
+}
+
+function chip(f) {
+  if (f.kind === "form" || f.kind === "link") {
+    const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, f.kind === "form" ? SHORT.form : (f.short || f.label)); return a;
+  }
+  const b = el("button", "chip" + (f.kind === "slides" ? " pdf" : "")); b.type = "button";
+  const box = el("span"); b.append(box);
+  if (f.pending) { b.disabled = true; label(box, f.label + " 準備中", SHORT[f.kind] + " 準備中"); return b; }
+  if (f.release && Date.now() < Date.parse(f.release)) { const r = jst(f.release); b.disabled = true; label(box, `${f.label} ${r.md} ${r.hm} 公開`, `${SHORT[f.kind]} ${r.hm}`); return b; }
+  label(box, f.label, SHORT[f.kind]); b.append(el("small", "", fmtSize(f.size)));
+  b.addEventListener("click", () => download(f, b, box));
+  return b;
+}
+
+async function download(f, b, box) {
+  if (b.classList.contains("busy")) return;
+  const keep = [...box.childNodes]; b.classList.add("busy"); box.textContent = "準備中…";
+  try {
+    const plain = await dec(KEY, await getBin(`data/${f.id}.bin?v=${f.v}`));
+    const url = URL.createObjectURL(new Blob([plain], { type: f.mime }));
+    const a = document.createElement("a"); a.href = url; a.download = f.name; document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+    box.textContent = ""; box.append(...keep);
+  } catch (e) {
+    box.textContent = e.status === 404 && f.release ? "まもなく公開。少しあとで開き直してください" : "取得できませんでした。開き直してください";
+  } finally { b.classList.remove("busy"); }
+}
+
+$("#f").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const pw = $("#pw").value;
+  if (!pw.trim()) { $("#err").textContent = "この端末にはパスワードが記憶されていません。パスワードを入れてください。"; $("#pw").focus(); return; }
+  $("#go").disabled = true; $("#err").textContent = "確かめています…";
+  try {
+    const raw = await derive(pw);
+    await open(raw);
+    save(raw, $("#rem").checked); $("#pw").value = ""; $("#err").textContent = "";
+  } catch (e) {
+    $("#err").textContent = e && e.status ? "資料を読み込めませんでした。通信を確かめて、もう一度試してください。" : "パスワードが違います。授業で伝えたパスワードを、そのまま入れてください（大文字・小文字、全角・半角は区別しません）。";
+  } finally { $("#go").disabled = false; }
+});
+$("#out").addEventListener("click", () => { forget(); KEY = MAN = null; $("#meta").hidden = true; $("#meta").textContent = ""; $("#list").hidden = true; $("#lock").hidden = false; $("#pw").focus(); });
+
+(async () => {
+  if (!window.crypto || !crypto.subtle) { $("#err").textContent = "このブラウザでは開けません。Safari・Chrome・Edge の新しい版で開いてください。"; $("#go").disabled = true; return; }
+  const s = saved();
+  if (s) { try { await open(unb64(s)); } catch (e) { if (!e.status) forget(); } }
+})();
+</script>
+</body>
+</html>
