@@ -105,7 +105,7 @@ footer p{margin:0 0 6px;max-width:64ch}
 
 <footer>
   <p>資料は受講者の学習のためのものです。ほかの人に渡したり、SNS やほかのサイトに載せたりしないでください。パスワードも人に教えないでください。</p>
-  <p>スライドの PDF は、授業の前日のうちに載せます。</p>
+  <p>スライドの PDF は授業の前に更新することがあります。最新のものをダウンロードしてください。</p>
 </footer>
 </div>
 
@@ -181,9 +181,9 @@ function chip(f) {
   }
   const b = el("button", "chip" + (f.kind === "slides" ? " pdf" : "")); b.type = "button";
   const box = el("span"); b.append(box);
-  if (f.pending) { b.disabled = true; label(box, f.label + " 準備中", SHORT[f.kind] + " 準備中"); return b; }
-  if (f.release && Date.now() < Date.parse(f.release)) { const r = jst(f.release); b.disabled = true; label(box, `${f.label} ${r.md} ${r.hm} 公開`, `${SHORT[f.kind]} ${r.hm}`); return b; }
-  label(box, f.label, SHORT[f.kind]); b.append(el("small", "", fmtSize(f.size)));
+  if (f.pending) { b.disabled = true; label(box, f.label + " 準備中", (f.short || SHORT[f.kind]) + " 準備中"); return b; }
+  if (f.release && Date.now() < Date.parse(f.release)) { const r = jst(f.release); b.disabled = true; label(box, `${f.label} ${r.md} ${r.hm} 公開`, `${(f.short || SHORT[f.kind])} ${r.hm}`); return b; }
+  label(box, f.label, (f.short || SHORT[f.kind])); b.append(el("small", "", fmtSize(f.size)));
   b.addEventListener("click", () => download(f, b, box));
   return b;
 }
