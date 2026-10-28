@@ -179,6 +179,10 @@ function render() {
 }
 
 function chip(f) {
+  if ((f.kind === "form" || f.kind === "link") && f.pending) {
+    const b = el("button", "chip"); b.type = "button"; b.disabled = true; const box = el("span"); b.append(box);
+    label(box, f.label + " 準備中", (f.kind === "form" ? SHORT.form : (f.short || f.label)) + " 準備中"); return b;
+  }
   if (f.kind === "form" || f.kind === "link") {
     const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, f.kind === "form" ? SHORT.form : (f.short || f.label)); return a;
   }
