@@ -62,6 +62,7 @@ ol.lectures{list-style:none;margin:0;padding:0}
 .is-future .title{font-weight:500;color:var(--sub)}
 .l2{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
 .desc{font-size:13px;color:var(--faint)}
+.note{grid-column:2;margin-top:4px;font-size:12px;line-height:1.6;color:var(--warn)}
 .chip{display:inline-flex;align-items:baseline;gap:6px;font:inherit;font-size:13px;font-weight:600;line-height:1.5;padding:2px 10px;border:1px solid var(--chip-line);border-radius:99px;background:var(--chip);color:var(--ink);cursor:pointer;text-decoration:none;white-space:nowrap}
 .chip:hover{border-color:var(--ink)}
 .chip.pdf{background:var(--ink);border-color:var(--ink);color:var(--bg)}
@@ -166,7 +167,9 @@ function render() {
     const l2 = el("div", "l2");
     if (l.files.length) for (const f of l.files) l2.append(chip(f)); else l2.append(el("span", "desc", l.desc));
     li.setAttribute("aria-label", `第 ${l.no} 回 ${fmtDate(l.date)} ${l.title}`);
-    li.append(no, l1, l2); ol.append(li);
+    li.append(no, l1, l2);
+    if (l.note) li.append(el("div", "note", l.note));
+    ol.append(li);
   }
   const meta = $("#meta"); meta.textContent = "";
   for (const s of (MAN.course || [])) meta.append(el("span", "", s));
@@ -176,6 +179,10 @@ function render() {
 }
 
 function chip(f) {
+  if ((f.kind === "form" || f.kind === "link") && f.pending) {
+    const b = el("button", "chip"); b.type = "button"; b.disabled = true; const box = el("span"); b.append(box);
+    label(box, f.label + " 準備中", (f.kind === "form" ? SHORT.form : (f.short || f.label)) + " 準備中"); return b;
+  }
   if (f.kind === "form" || f.kind === "link") {
     const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, f.kind === "form" ? SHORT.form : (f.short || f.label)); return a;
   }
