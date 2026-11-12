@@ -183,6 +183,13 @@ function chip(f) {
     const b = el("button", "chip"); b.type = "button"; b.disabled = true; const box = el("span"); b.append(box);
     label(box, f.label + " 準備中", (f.kind === "form" ? SHORT.form : (f.short || f.label)) + " 準備中"); return b;
   }
+  if (f.kind === "link" && f.release && Date.now() < Date.parse(f.release)) {
+    const r = jst(f.release); const b = el("button", "chip"); b.type = "button"; b.disabled = true; const box = el("span"); b.append(box);
+    label(box, `${f.label} ${r.md} ${r.hm} 公開`, `${(f.short || f.label)} ${r.hm}`);
+    const wait = Date.parse(f.release) - Date.now();
+    if (wait < 864e5) setTimeout(() => { if (b.isConnected) b.replaceWith(chip(f)); }, wait + 500);
+    return b;
+  }
   if (f.kind === "form" || f.kind === "link") {
     const a = el("a", "chip"); a.href = f.url; a.target = "_blank"; a.rel = "noopener noreferrer"; label(a, f.label, f.kind === "form" ? SHORT.form : (f.short || f.label)); return a;
   }
